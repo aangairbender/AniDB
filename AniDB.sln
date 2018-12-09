@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2042
@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{E3120349-832
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{7424857C-5548-46B5-8F29-9B9AAE514902}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AniDB.Domain", "AniDB.Domain\AniDB.Domain.csproj", "{536BE56F-6D45-4669-8AAB-CF222D0B7949}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AniDB.Domain", "Src\AniDB.Domain\AniDB.Domain.csproj", "{536BE56F-6D45-4669-8AAB-CF222D0B7949}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
