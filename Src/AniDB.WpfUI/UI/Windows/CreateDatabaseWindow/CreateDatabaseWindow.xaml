@@ -1,0 +1,22 @@
+﻿<Window x:Class="AniDB.WpfUI.UI.Windows.CreateDatabaseWindow.CreateDatabaseWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AniDB.WpfUI.UI.Windows.CreateDatabaseWindow"
+        mc:Ignorable="d"
+        Title="Create database" Height="100" Width="200">
+    <Grid>
+        <StackPanel>
+            <Label Content="Enter database name:"></Label>
+            <TextBox Text="{Binding DatabaseName}"></TextBox>
+            <Button
+                Width="50"
+                Content="Create"
+                HorizontalAlignment="Right"
+                Margin="0,2,10,2"
+                Command="{Binding CreateDatabaseCommand}"
+                CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
+        </StackPanel>
+    </Grid>
+</Window>

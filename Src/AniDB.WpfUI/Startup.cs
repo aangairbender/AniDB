@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using AniDB.Application.Infrastructure;
 using AniDB.Persistence.Repositories.InMemory;
 using Autofac;
+using FluentValidation;
 using MediatR;
 
 namespace AniDB.WpfUI
@@ -30,7 +31,13 @@ namespace AniDB.WpfUI
 
             builder
                 .RegisterAssemblyTypes(typeof(RequestValidationBehavior<,>).GetTypeInfo().Assembly)
-                .AsImplementedInterfaces();
+                .AsImplementedInterfaces()
+                .InstancePerLifetimeScope();
+
+            builder
+                .RegisterGeneric(typeof(RequestValidationBehavior<,>))
+                .As(typeof(IPipelineBehavior<,>));
+
 
             builder
                 .RegisterType<InMemoryDatabaseRepository>()

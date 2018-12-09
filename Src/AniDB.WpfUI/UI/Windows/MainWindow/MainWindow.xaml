@@ -13,11 +13,13 @@
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <databasesList:DatabasesList
-            Grid.Column="0"
-            HorizontalAlignment="Stretch"
-            VerticalAlignment="Stretch"
-            DataContext="{Binding DatabasesListViewModel}"/>
+        <StackPanel Grid.Column="0">
+            <Button Content="New database" Width="100" HorizontalAlignment="Left" Command="{Binding CreateNewDatabase}"/>
+            <databasesList:DatabasesList
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                DataContext="{Binding DatabasesListViewModel}"/>
+        </StackPanel>
         <GridSplitter
             Grid.Column="1"
             VerticalAlignment="Stretch"

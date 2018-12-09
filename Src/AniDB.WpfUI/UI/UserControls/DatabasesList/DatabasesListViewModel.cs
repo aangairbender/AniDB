@@ -52,19 +52,17 @@ namespace AniDB.WpfUI.UserControls.DatabasesList
         {
             _container = container;
             _mediator = _container.Resolve<IMediator>();
-
+            
             LoadDatabases();
         }
 
         public async void LoadDatabases()
         {
-            await _mediator.Send(new CreateDatabaseCommand {Name = "database1"});
-            await _mediator.Send(new CreateDatabaseCommand {Name = "database2"});
-
             var databasesList = await _mediator.Send(new GetDatabasesListQuery());
 
             Databases = new ObservableCollection<DatabaseLookupModel>(databasesList.Databases);
-            SelectedDatabase = null;
+            if (SelectedDatabase == null || !Databases.Contains(SelectedDatabase))
+                SelectedDatabase = null;
         }
     }
 }
