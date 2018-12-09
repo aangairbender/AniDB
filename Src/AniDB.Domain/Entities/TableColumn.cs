@@ -1,4 +1,5 @@
-﻿using AniDB.Domain.Infrastructure;
+﻿using System;
+using AniDB.Domain.Infrastructure;
 
 namespace AniDB.Domain.Entities
 {
@@ -8,8 +9,15 @@ namespace AniDB.Domain.Entities
 
     }
 
-    public abstract class TableColumn
+    public abstract class TableColumn : IEntity
     {
+        public Guid Id { get; }
+
         public string Name { get; set; }
+
+        public TableColumn()
+        {
+            Id = new Guid();
+        }
     }
 }
