@@ -1,5 +1,5 @@
 ﻿using System.Windows;
-using AniDB.WpfUI.UI.Windows.MainWindow;
+using AniDB.WpfUI.UI.Windows.Main;
 
 namespace AniDB.WpfUI
 {

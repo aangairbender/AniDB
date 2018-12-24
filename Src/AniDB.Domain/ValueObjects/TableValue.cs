@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
+using AniDB.Domain.Infrastructure;
 
-namespace AniDB.Domain.Infrastructure
+namespace AniDB.Domain.ValueObjects
 {
     public abstract class TableValue<T> : TableValue
     {

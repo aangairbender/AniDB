@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using AniDB.Application.UseCases.Databases.Commands.CreateDatabase;
 using Autofac;
 using FluentValidation;
@@ -11,7 +6,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using MediatR;
 
-namespace AniDB.WpfUI.UI.Windows.CreateDatabaseWindow
+namespace AniDB.WpfUI.UI.Windows.CreateDatabase
 {
     public class CreateDatabaseWindowViewModel : ViewModelBase
     {

@@ -40,8 +40,8 @@ namespace AniDB.WpfUI
 
 
             builder
-                .RegisterType<InMemoryDatabaseRepository>()
-                .As<IDatabaseRepository>()
+                .RegisterType<InMemoryRepository>()
+                .As<IRepository>()
                 .SingleInstance();
 
             return builder.Build();

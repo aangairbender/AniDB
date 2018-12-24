@@ -9,18 +9,18 @@ namespace AniDB.Application.UseCases.Databases.Queries.GetDatabasesList
 {
     public class GetDatabasesListQueryHandler : IRequestHandler<GetDatabasesListQuery, DatabasesListModel>
     {
-        private readonly IDatabaseRepository _databaseRepository;
+        private readonly IRepository _repository;
 
-        public GetDatabasesListQueryHandler(IDatabaseRepository databaseRepository)
+        public GetDatabasesListQueryHandler(IRepository repository)
         {
-            _databaseRepository = databaseRepository;
+            _repository = repository;
         }
 
         public async Task<DatabasesListModel> Handle(GetDatabasesListQuery request, CancellationToken cancellationToken)
         {
             var vm = new DatabasesListModel
             {
-                Databases = (await _databaseRepository.GetAll()).Select(x =>
+                Databases = (await _repository.GetDatabases()).Select(x =>
                     new DatabaseLookupModel
                     {
                         Id = x.Id,

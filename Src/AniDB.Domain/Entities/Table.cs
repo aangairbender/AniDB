@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using AniDB.Domain.Infrastructure;
 
 namespace AniDB.Domain.Entities
@@ -9,17 +8,17 @@ namespace AniDB.Domain.Entities
     {
         public Guid Id { get; }
 
-        public string Name { get; set; }
+        public string Name { get; private set; }
 
-        public IReadOnlyList<TableColumn> Columns { get; }
+        public TableSchema Schema { get; private set; }
 
-        public IReadOnlyList<TableRow> Rows { get; }
+        public IReadOnlyList<TableRow> Data { get; }
 
         public Table()
         {
             Id = Guid.NewGuid();
-            Columns = new List<TableColumn>();
-            Rows = new List<TableRow>();
+            Schema = new TableSchema();
+            Data = new List<TableRow>();
         }
 
     }

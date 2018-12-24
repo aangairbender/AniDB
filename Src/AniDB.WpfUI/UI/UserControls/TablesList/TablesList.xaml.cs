@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AniDB.WpfUI
+namespace AniDB.WpfUI.UI.UserControls.TablesList
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для TablesList.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class TablesList : UserControl
     {
-        public MainWindow()
+        public TablesList()
         {
             InitializeComponent();
         }

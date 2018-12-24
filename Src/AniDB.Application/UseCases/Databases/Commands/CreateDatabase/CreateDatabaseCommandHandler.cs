@@ -12,16 +12,16 @@ namespace AniDB.Application.UseCases.Databases.Commands.CreateDatabase
 {
     public class CreateDatabaseCommandHandler : IRequestHandler<CreateDatabaseCommand, Unit>
     {
-        private readonly IDatabaseRepository _databaseRepository;
+        private readonly IRepository _repository;
 
-        public CreateDatabaseCommandHandler(IDatabaseRepository databaseRepository)
+        public CreateDatabaseCommandHandler(IRepository repository)
         {
-            _databaseRepository = databaseRepository;
+            _repository = repository;
         }
 
         public async Task<Unit> Handle(CreateDatabaseCommand request, CancellationToken cancellationToken)
         {
-            bool existsWithSameName = await _databaseRepository.ExistsWithName(request.Name);
+            bool existsWithSameName = await _repository.DatabaseExistsWithName(request.Name);
             if (existsWithSameName)
                 throw new DatabaseWithSameNameExistsException(request.Name);
 
@@ -30,7 +30,7 @@ namespace AniDB.Application.UseCases.Databases.Commands.CreateDatabase
                 Name = request.Name
             };
 
-            await _databaseRepository.Add(entity);
+            await _repository.AddDatabase(entity);
 
             return Unit.Value;
         }

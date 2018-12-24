@@ -1,5 +1,6 @@
 ﻿using System;
 using AniDB.Domain.Infrastructure;
+using AniDB.Domain.ValueObjects;
 
 namespace AniDB.Domain.Entities
 {

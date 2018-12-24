@@ -88,16 +88,28 @@
       <DependentUpon>DatabasesList.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\UserControls\DatabasesList\DatabasesListViewModel.cs" />
-    <Compile Include="UI\Windows\CreateDatabaseWindow\CreateDatabaseWindow.xaml.cs">
+    <Compile Include="UI\UserControls\TablesList\TablesList.xaml.cs">
+      <DependentUpon>TablesList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UserControls\TablesList\TablesListViewModel.cs" />
+    <Compile Include="UI\Windows\CreateDatabase\CreateDatabaseWindow.xaml.cs">
       <DependentUpon>CreateDatabaseWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UI\Windows\CreateDatabaseWindow\CreateDatabaseWindowViewModel.cs" />
-    <Compile Include="UI\Windows\MainWindow\MainWindowViewModel.cs" />
-    <Page Include="UI\Windows\CreateDatabaseWindow\CreateDatabaseWindow.xaml">
+    <Compile Include="UI\Windows\CreateDatabase\CreateDatabaseWindowViewModel.cs" />
+    <Compile Include="UI\Windows\Main\MainWindowViewModel.cs" />
+    <Compile Include="UI\Windows\OperateDatabase\OperateDatabaseWindow.xaml.cs">
+      <DependentUpon>OperateDatabaseWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Windows\OperateDatabase\OperateDatabaseWindowViewModel.cs" />
+    <Page Include="UI\UserControls\TablesList\TablesList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UI\Windows\MainWindow\MainWindow.xaml">
+    <Page Include="UI\Windows\CreateDatabase\CreateDatabaseWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Windows\Main\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -105,11 +117,15 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="UI\Windows\MainWindow\MainWindow.xaml.cs">
+    <Compile Include="UI\Windows\Main\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Page Include="UI\UserControls\DatabasesList\DatabasesList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Windows\OperateDatabase\OperateDatabaseWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

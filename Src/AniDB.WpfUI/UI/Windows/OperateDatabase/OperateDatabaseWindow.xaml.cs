@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace AniDB.WpfUI.UI.Windows.CreateDatabaseWindow
+namespace AniDB.WpfUI.UI.Windows.OperateDatabase
 {
     /// <summary>
-    /// Логика взаимодействия для CreateDatabaseWindow.xaml
+    /// Логика взаимодействия для OperateDatabaseWindow.xaml
     /// </summary>
-    public partial class CreateDatabaseWindow : Window
+    public partial class OperateDatabaseWindow : Window
     {
-        public CreateDatabaseWindow()
+        public OperateDatabaseWindow()
         {
             InitializeComponent();
         }

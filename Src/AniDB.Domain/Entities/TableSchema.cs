@@ -1,20 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using AniDB.Domain.Infrastructure;
-using AniDB.Domain.ValueObjects;
 
 namespace AniDB.Domain.Entities
 {
-    public class TableRow : IEntity
+    public class TableSchema : IEntity
     {
         public Guid Id { get; }
 
-        public IReadOnlyList<TableValue> Values { get; }
+        public IReadOnlyList<TableColumn> Columns { get; }
 
-        public TableRow()
+        public TableSchema()
         {
             Id = Guid.NewGuid();
-            Values = new List<TableValue>();
+            Columns = new List<TableColumn>();
         }
     }
 }
