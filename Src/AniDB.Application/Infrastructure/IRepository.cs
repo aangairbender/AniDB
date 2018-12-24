@@ -12,5 +12,7 @@ namespace AniDB.Application.Infrastructure
         Task<bool> DatabaseExistsWithName(string name);
 
         Task<List<Table>> GetTables(Guid databaseId);
+        Task<ICollection<TableRow>> GetTableData(Guid tableId);
+        Task<TableSchema> GetTableSchema(Guid tableId);
     }
 }

@@ -88,6 +88,14 @@
       <DependentUpon>DatabasesList.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\UserControls\DatabasesList\DatabasesListViewModel.cs" />
+    <Compile Include="UI\UserControls\TableData\TableData.xaml.cs">
+      <DependentUpon>TableData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UserControls\TableData\TableDataViewModel.cs" />
+    <Compile Include="UI\UserControls\TableSchema\TableSchema.xaml.cs">
+      <DependentUpon>TableSchema.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UserControls\TableSchema\TableSchemaViewModel.cs" />
     <Compile Include="UI\UserControls\TablesList\TablesList.xaml.cs">
       <DependentUpon>TablesList.xaml</DependentUpon>
     </Compile>
@@ -101,6 +109,14 @@
       <DependentUpon>OperateDatabaseWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\Windows\OperateDatabase\OperateDatabaseWindowViewModel.cs" />
+    <Page Include="UI\UserControls\TableData\TableData.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\UserControls\TableSchema\TableSchema.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UI\UserControls\TablesList\TablesList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -161,6 +177,10 @@
     <ProjectReference Include="..\AniDB.Application\AniDB.Application.csproj">
       <Project>{8AC89030-8542-4EFD-B541-CE2BBF9BBC91}</Project>
       <Name>AniDB.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AniDB.Domain\AniDB.Domain.csproj">
+      <Project>{536be56f-6d45-4669-8aab-cf222d0b7949}</Project>
+      <Name>AniDB.Domain</Name>
     </ProjectReference>
     <ProjectReference Include="..\AniDB.Persistence\AniDB.Persistence.csproj">
       <Project>{dc819c65-d6b6-4bb2-ba50-971a0a1675fc}</Project>

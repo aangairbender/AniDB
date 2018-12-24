@@ -7,14 +7,18 @@ namespace AniDB.Domain.Entities
 {
     public class TableSchema : IEntity
     {
-        public Guid Id { get; }
+        public Guid Id { get; set; }
 
         public IReadOnlyList<TableColumn> Columns { get; }
 
-        public TableSchema()
+        public TableSchema() : this(new List<TableColumn>())
+        {
+        }
+
+        public TableSchema(IReadOnlyList<TableColumn> columns)
         {
             Id = Guid.NewGuid();
-            Columns = new List<TableColumn>();
+            Columns = columns;
         }
     }
 }

@@ -4,9 +4,32 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AniDB.WpfUI.UI.Windows.OperateDatabase"
+        xmlns:tablesList="clr-namespace:AniDB.WpfUI.UI.UserControls.TablesList"
+        xmlns:tableData="clr-namespace:AniDB.WpfUI.UI.UserControls.TableData"
+        xmlns:tableSchema="clr-namespace:AniDB.WpfUI.UI.UserControls.TableSchema"
         mc:Ignorable="d"
         Title="{Binding DatabaseName}" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <tablesList:TablesList Grid.Column="0" DataContext="{Binding TablesListViewModel}"/>
+        <GridSplitter Grid.Column="1" ShowsPreview="False" Width="3" HorizontalAlignment="Center" VerticalAlignment="Stretch"/>
+        <TabControl Grid.Column="2">
+            <TabItem>
+                <TabItem.Header>Data</TabItem.Header>
+                <TabItem.Content>
+                    <tableData:TableData DataContext="{Binding TableDataViewModel}"/>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>Schema</TabItem.Header>
+                <TabItem.Content>
+                    <tableSchema:TableSchema DataContext="{Binding TableSchemaViewModel}"/>
+                </TabItem.Content>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

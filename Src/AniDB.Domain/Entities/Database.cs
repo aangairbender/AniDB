@@ -6,7 +6,7 @@ namespace AniDB.Domain.Entities
 {
     public class Database : IEntity
     {
-        public Guid Id { get; }
+        public Guid Id { get; set; }
 
         public string Name { get; set; }
 
@@ -16,6 +16,11 @@ namespace AniDB.Domain.Entities
         {
             Id = Guid.NewGuid();
             Tables = new List<Table>();
+        }
+
+        public void AddTable(Table table)
+        {
+            Tables.Add(table);
         }
 
     }

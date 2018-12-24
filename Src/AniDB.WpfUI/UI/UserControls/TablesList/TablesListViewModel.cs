@@ -53,7 +53,7 @@ namespace AniDB.WpfUI.UI.UserControls.TablesList
             LoadTables();
         }
 
-        public async void LoadTables()
+        private async void LoadTables()
         {
             var tablesList = await _mediator.Send(new GetTablesListQuery{DatabaseId = _databaseId});
 

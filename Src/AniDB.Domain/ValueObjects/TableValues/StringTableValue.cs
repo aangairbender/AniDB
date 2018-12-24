@@ -1,21 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using AniDB.Domain.Infrastructure;
+using System.Text;
 
 namespace AniDB.Domain.ValueObjects.TableValues
 {
-    public class IntegerTableValue : TableValue<int>
+    public class StringTableValue : TableValue<string>
     {
-        public IntegerTableValue(int value) : base(value) { }
+        public StringTableValue(string value) : base(value) { }
 
         public override string ToString()
         {
-            return Value.ToString();
+            return Value;
         }
 
         public override void FromString(string value)
         {
-            Value = Convert.ToInt32(value);
+            Value = value;
         }
     }
 }

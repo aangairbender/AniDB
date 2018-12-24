@@ -53,7 +53,9 @@ namespace AniDB.WpfUI.UI.Windows.Main
             var operateDatabaseWindow = new OperateDatabaseWindow
             {
                 DataContext =
-                    new OperateDatabaseWindowViewModel(_container, DatabasesListViewModel.SelectedDatabase.Id)
+                    new OperateDatabaseWindowViewModel(_container,
+                        DatabasesListViewModel.SelectedDatabase.Id,
+                        DatabasesListViewModel.SelectedDatabase.Name)
             };
             operateDatabaseWindow.Show();
         }
