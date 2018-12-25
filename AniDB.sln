@@ -5,14 +5,24 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{E3120349-832A-447B-B9D2-179F31336470}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{7424857C-5548-46B5-8F29-9B9AAE514902}"
+	ProjectSection(SolutionItems) = preProject
+		Docs\Report_ua.docx = Docs\Report_ua.docx
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AniDB.Domain", "Src\AniDB.Domain\AniDB.Domain.csproj", "{536BE56F-6D45-4669-8AAB-CF222D0B7949}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AniDB.Domain", "Src\AniDB.Domain\AniDB.Domain.csproj", "{536BE56F-6D45-4669-8AAB-CF222D0B7949}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AniDB.Application", "Src\AniDB.Application\AniDB.Application.csproj", "{8AC89030-8542-4EFD-B541-CE2BBF9BBC91}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AniDB.Application", "Src\AniDB.Application\AniDB.Application.csproj", "{8AC89030-8542-4EFD-B541-CE2BBF9BBC91}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AniDB.WpfUI", "Src\AniDB.WpfUI\AniDB.WpfUI.csproj", "{77A9E82E-4D56-4DD0-9F8B-12B642692227}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AniDB.Persistence", "Src\AniDB.Persistence\AniDB.Persistence.csproj", "{DC819C65-D6B6-4BB2-BA50-971A0A1675FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AniDB.Persistence", "Src\AniDB.Persistence\AniDB.Persistence.csproj", "{DC819C65-D6B6-4BB2-BA50-971A0A1675FC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Diagrams", "Diagrams", "{BD265CC1-6170-47D7-A31D-204B97B32287}"
+	ProjectSection(SolutionItems) = preProject
+		Docs\Diagrams\UseCases.graphml = Docs\Diagrams\UseCases.graphml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AniDB.AspNetApi", "Src\AniDB.AspNetApi\AniDB.AspNetApi.csproj", "{107EB26A-6212-433D-9816-231CD90DD348}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,6 +46,10 @@ Global
 		{DC819C65-D6B6-4BB2-BA50-971A0A1675FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC819C65-D6B6-4BB2-BA50-971A0A1675FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC819C65-D6B6-4BB2-BA50-971A0A1675FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{107EB26A-6212-433D-9816-231CD90DD348}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{107EB26A-6212-433D-9816-231CD90DD348}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{107EB26A-6212-433D-9816-231CD90DD348}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{107EB26A-6212-433D-9816-231CD90DD348}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -45,6 +59,8 @@ Global
 		{8AC89030-8542-4EFD-B541-CE2BBF9BBC91} = {E3120349-832A-447B-B9D2-179F31336470}
 		{77A9E82E-4D56-4DD0-9F8B-12B642692227} = {E3120349-832A-447B-B9D2-179F31336470}
 		{DC819C65-D6B6-4BB2-BA50-971A0A1675FC} = {E3120349-832A-447B-B9D2-179F31336470}
+		{BD265CC1-6170-47D7-A31D-204B97B32287} = {7424857C-5548-46B5-8F29-9B9AAE514902}
+		{107EB26A-6212-433D-9816-231CD90DD348} = {E3120349-832A-447B-B9D2-179F31336470}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6FBCFA9E-84A7-4E89-9967-DE1B43142E6C}
