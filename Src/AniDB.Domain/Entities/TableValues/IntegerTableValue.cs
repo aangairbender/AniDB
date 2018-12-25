@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using AniDB.Domain.Infrastructure;
 
-namespace AniDB.Domain.ValueObjects.TableValues
+namespace AniDB.Domain.Entities.TableValues
 {
     public class IntegerTableValue : TableValue<int>
     {
@@ -15,7 +13,11 @@ namespace AniDB.Domain.ValueObjects.TableValues
 
         public override void FromString(string value)
         {
-            Value = Convert.ToInt32(value);
+            bool result = Int32.TryParse(value, out var newValue);
+            if (result)
+                Value = newValue;
+            else
+                throw new Exception($"Can't cast \"{value}\" to integer value");
         }
     }
 }

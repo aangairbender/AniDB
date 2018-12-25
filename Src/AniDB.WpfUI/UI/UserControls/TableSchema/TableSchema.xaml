@@ -12,22 +12,7 @@
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Title" DisplayMemberBinding="{Binding Name}"/>
-                    <GridViewColumn Header="Type">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <ComboBox
-                                    ItemsSource="{Binding Source={x:Static valueObjects:TableValue.SupportedTypes}}"
-                                    SelectedValue="{Binding Type, Mode=OneWay}"
-                                    SelectedValuePath="Key">
-                                    <ComboBox.ItemTemplate>
-                                        <DataTemplate>
-                                            <TextBlock Text="{Binding Path=Value}"/>
-                                        </DataTemplate>
-                                    </ComboBox.ItemTemplate>
-                                </ComboBox>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
+                    <GridViewColumn Header="Type" DisplayMemberBinding="{Binding TypeDescription}"/>
                 </GridView>
             </ListView.View>
         </ListView>  

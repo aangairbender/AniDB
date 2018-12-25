@@ -53,10 +53,9 @@ namespace AniDB.WpfUI.UI.UserControls.TablesList
             LoadTables();
         }
 
-        private async void LoadTables()
+        public async void LoadTables()
         {
             var tablesList = await _mediator.Send(new GetTablesListQuery{DatabaseId = _databaseId});
-
             Tables = new ObservableCollection<TableLookupModel>(tablesList.Tables);
             if (SelectedTable == null || !Tables.Contains(SelectedTable))
                 SelectedTable = null;

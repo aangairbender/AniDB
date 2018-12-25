@@ -55,6 +55,9 @@
     <Reference Include="MediatR, Version=5.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\MediatR.5.1.0\lib\net45\MediatR.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Annotations, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\..\packages\System.ComponentModel.Annotations.4.4.1\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
@@ -104,6 +107,11 @@
       <DependentUpon>CreateDatabaseWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\Windows\CreateDatabase\CreateDatabaseWindowViewModel.cs" />
+    <Compile Include="UI\Windows\CreateTable\CreateTableWindow.xaml.cs">
+      <DependentUpon>CreateTableWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Windows\CreateTable\CreateTableWindowViewModel.cs" />
+    <Compile Include="UI\Windows\CreateTable\TableColumnModel.cs" />
     <Compile Include="UI\Windows\Main\MainWindowViewModel.cs" />
     <Compile Include="UI\Windows\OperateDatabase\OperateDatabaseWindow.xaml.cs">
       <DependentUpon>OperateDatabaseWindow.xaml</DependentUpon>
@@ -122,6 +130,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UI\Windows\CreateDatabase\CreateDatabaseWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Windows\CreateTable\CreateTableWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

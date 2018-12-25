@@ -5,12 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:databasesList="clr-namespace:AniDB.WpfUI.UserControls.DatabasesList"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="342">
+        Title="MainWindow" Height="450" Width="508.843">
     <Grid>
         <StackPanel Grid.Column="0">
             <StackPanel Orientation="Horizontal">
                 <Button Content="New database" Width="100" HorizontalAlignment="Left" Command="{Binding CreateNewDatabase}" Margin="5,0"/>
                 <Button Content="Operate database" Width="100" HorizontalAlignment="Left" Command="{Binding OperateDatabase}" Margin="5,0"/>
+                <Button Content="Save database" Width="100" HorizontalAlignment="Left" Command="{Binding SaveDatabase}" Margin="5,0"/>
+                <Button Content="Load database" Width="100" HorizontalAlignment="Left" Command="{Binding LoadDatabase}" Margin="5,0"/>
             </StackPanel>
             <databasesList:DatabasesList
                 HorizontalAlignment="Stretch"

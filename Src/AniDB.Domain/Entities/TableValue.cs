@@ -1,26 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using AniDB.Domain.Entities.TableValues;
 using AniDB.Domain.Infrastructure;
-using AniDB.Domain.ValueObjects.TableValues;
 
-namespace AniDB.Domain.ValueObjects
+namespace AniDB.Domain.Entities
 {
     public abstract class TableValue<T> : TableValue
     {
         public T Value { get; set; }
 
-        public TableValue(T value)
+        protected TableValue(T value)
         {
             Value = value;
         }
-
-        protected override IEnumerable<object> GetAtomicValues()
-        {
-            yield return Value;
-        }
     }
 
-    public abstract class TableValue : ValueObject
+    public abstract class TableValue : IEntity
     {
         public new abstract string ToString();
         public abstract void FromString(string value);
@@ -29,6 +25,17 @@ namespace AniDB.Domain.ValueObjects
         {
             {typeof(IntegerTableValue), "Integer"},
             {typeof(StringTableValue), "String"},
+            {typeof(CharTableValue), "Char"},
+            {typeof(RealTableValue), "Real"},
+            {typeof(CharIntervalTableValue), "CharInterval"},
+            {typeof(BoundedStringTableValue), "BoundedString"},
         };
+
+        public Guid Id { get; }
+
+        protected TableValue()
+        {
+            Id = Guid.NewGuid();
+        }
     }
 }

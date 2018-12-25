@@ -15,7 +15,13 @@
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <tablesList:TablesList Grid.Column="0" DataContext="{Binding TablesListViewModel}"/>
+        <StackPanel Grid.Column="0">
+            <StackPanel Orientation="Horizontal">
+                <Button Content="New table" Width="100" HorizontalAlignment="Left" Command="{Binding CreateNewTable}" Margin="5,0"/>
+                <Button Content="Delete table" Width="100" HorizontalAlignment="Left" Command="{Binding DeleteTable}" Margin="5,0"/>
+            </StackPanel>
+            <tablesList:TablesList DataContext="{Binding TablesListViewModel}"/>
+        </StackPanel>
         <GridSplitter Grid.Column="1" ShowsPreview="False" Width="3" HorizontalAlignment="Center" VerticalAlignment="Stretch"/>
         <TabControl Grid.Column="2">
             <TabItem>

@@ -26,5 +26,28 @@ namespace AniDB.Domain.Entities
             Data.Add(row);
         }
 
+        public void SwapColumns(Guid columnAId, Guid columnBId)
+        {
+            int indexA = -1, indexB = -1;
+            for (int i = 0; i < Schema.Columns.Count; ++i)
+            {
+                if (Schema.Columns[i].Id == columnAId)
+                    indexA = i;
+                if (Schema.Columns[i].Id == columnBId)
+                    indexB = i;
+            }
+
+            var tmp = Schema.Columns[indexA];
+            Schema.Columns[indexA] = Schema.Columns[indexB];
+            Schema.Columns[indexB] = tmp;
+
+            foreach (var tableRow in Data)
+            {
+                var tmp2 = tableRow.Values[indexA];
+                tableRow.Values[indexA] = tableRow.Values[indexB];
+                tableRow.Values[indexB] = tmp2;
+            }
+        }
+
     }
 }

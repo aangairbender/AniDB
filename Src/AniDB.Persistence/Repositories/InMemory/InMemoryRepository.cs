@@ -4,8 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using AniDB.Application.Infrastructure;
 using AniDB.Domain.Entities;
+using AniDB.Domain.Entities.TableValues;
 using AniDB.Domain.ValueObjects;
-using AniDB.Domain.ValueObjects.TableValues;
 
 namespace AniDB.Persistence.Repositories.InMemory
 {
@@ -78,6 +78,11 @@ namespace AniDB.Persistence.Repositories.InMemory
         }
 
 
+        public Task<Database> GetDatabase(Guid databaseId)
+        {
+            return Task.Run(() => _databases.FirstOrDefault(d => d.Key == databaseId).Value);
+        }
+
         public Task<List<Table>> GetTables(Guid databaseId)
         {
             return Task.Run(() => _databases.Values.First(x => x.Id == databaseId).Tables.ToList());
@@ -93,7 +98,55 @@ namespace AniDB.Persistence.Repositories.InMemory
         public Task<TableSchema> GetTableSchema(Guid tableId)
         {
             return Task.Run(() =>
-                _databases.Values.First(x => x.Tables.Any(t => t.Id == tableId)).Tables.First(t => t.Id == tableId).Schema);
+                _databases.Values.First(x => x.Tables.Any(t => t.Id == tableId)).Tables.First(t => t.Id == tableId)
+                    .Schema);
+        }
+
+        public Task<bool> TableExistsWithName(Guid databaseId, string name)
+        {
+            return Task.Run(() => _databases[databaseId].Tables.Any(t => t.Name.Equals(name)));
+        }
+
+        public Task AddTable(Guid databaseId, Table table)
+        {
+            return Task.Run(() => _databases[databaseId].AddTable(table));
+        }
+
+        public Task DeleteTable(Guid tableId)
+        {
+            return Task.Run(() =>
+                _databases.Values.First(x => x.Tables.Any(t => t.Id == tableId)).DeleteTable(tableId));
+        }
+
+        public Task AddRowToTable(Guid tableId, TableRow tableRow)
+        {
+            return Task.Run(() =>
+                _databases.Values.First(x => x.Tables.Any(t => t.Id == tableId)).Tables.First(t => t.Id == tableId)
+                    .AddRow(tableRow));
+        }
+
+        public Task ModifyTableValue(Guid tableId, Guid tableRowId, Guid tableValueId, string newValue)
+        {
+            return Task.Run(() =>
+                _databases.Values.First(x => x.Tables.Any(t => t.Id == tableId)).Tables.First(t => t.Id == tableId)
+                    .Data.First(x => x.Id == tableRowId).Values.First(x => x.Id == tableValueId).FromString(newValue));
+        }
+
+        public Task RenameColumn(Guid tableId, Guid columnId, string newName)
+        {
+            return Task.Run(() =>
+                _databases.Values.First(x => x.Tables.Any(t => t.Id == tableId)).Tables.First(t => t.Id == tableId)
+                    .Schema.Columns.First(x => x.Id == columnId).Name = newName);
+        }
+
+        public Task SwapColumnIndices(Guid tableId, Guid columnAId, Guid columnBId)
+        {
+            return Task.Run(() =>
+            {
+                var table = _databases.Values.First(x => x.Tables.Any(t => t.Id == tableId)).Tables
+                    .First(t => t.Id == tableId);
+                table.SwapColumns(columnAId, columnBId);
+            });
         }
 
         public Task AddDatabase(Database database)

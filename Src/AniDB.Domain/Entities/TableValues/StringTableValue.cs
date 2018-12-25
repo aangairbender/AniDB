@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace AniDB.Domain.ValueObjects.TableValues
+﻿namespace AniDB.Domain.Entities.TableValues
 {
     public class StringTableValue : TableValue<string>
     {
