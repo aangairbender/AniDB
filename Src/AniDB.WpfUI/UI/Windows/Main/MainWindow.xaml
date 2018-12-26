@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:databasesList="clr-namespace:AniDB.WpfUI.UserControls.DatabasesList"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="508.843">
+        Title="AniDB" Height="450" Width="508.843">
     <Grid>
         <StackPanel Grid.Column="0">
             <StackPanel Orientation="Horizontal">

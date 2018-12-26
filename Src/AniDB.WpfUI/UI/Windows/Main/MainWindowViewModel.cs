@@ -9,6 +9,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using MediatR;
 using Microsoft.Win32;
+using Newtonsoft.Json;
 
 namespace AniDB.WpfUI.UI.Windows.Main
 {

@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AniDB.Application.Infrastructure;
 using AniDB.Persistence.Repositories.InMemory;
+using AniDB.Persistence.Repositories.MySql;
 using Autofac;
 using FluentValidation;
 using MediatR;

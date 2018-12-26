@@ -21,7 +21,8 @@ namespace AniDB.Application.UseCases.Databases.Commands.LoadSerializedDatabase
 
         public async Task<Unit> Handle(LoadSerializedDatabaseCommand request, CancellationToken cancellationToken)
         {
-            var database = JsonConvert.DeserializeObject<Database>(request.Content);
+            var jsonSerializerSettings = new JsonSerializerSettings {TypeNameHandling = TypeNameHandling.All};
+            var database = JsonConvert.DeserializeObject<Database>(request.Content, jsonSerializerSettings);
             await _repository.AddDatabase(database);
             return Unit.Value;
         }

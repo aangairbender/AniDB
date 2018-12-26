@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AniDB.Application.UseCases.Tables.Commands.SwapColumnIndices;
 using AniDB.Application.UseCases.Tables.Queries.GetTableData;
 using AniDB.Application.UseCases.Tables.Queries.GetTablesList;
 using AniDB.Application.UseCases.Tables.Queries.GetTableSchema;
@@ -32,9 +33,11 @@ namespace AniDB.AspNetApi.Controllers
         }
 
         // POST api/<controller>
-        [HttpPost]
-        public void Post([FromBody]string value)
+        [HttpPost("{tableId}/swap/{id1}/{id2}")]
+        public async Task<Unit> Post(string tableId, string id1, string id2)
         {
+            return await Mediator.Send(new SwapColumnIndicesCommand
+                {TableId = Guid.Parse(tableId), ColumnAId = Guid.Parse(id1), ColumnBId = Guid.Parse(id2)});
         }
 
         // PUT api/<controller>/5

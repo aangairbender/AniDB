@@ -23,7 +23,7 @@ namespace AniDB.Domain.Entities
 
         public TableColumn()
         {
-            Id = new Guid();
+            Id = Guid.NewGuid();
         }
     }
 }
